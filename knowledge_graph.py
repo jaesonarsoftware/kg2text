@@ -46,6 +46,7 @@ class StanfordNER:
 class SpacyNER:
     def ner(self,doc):    
         nlp = en_core_web_sm.load()
+        nlp.max_length = 30000000;
         doc = nlp(doc)
         return [(X.text, X.label_) for X in doc.ents]
     
