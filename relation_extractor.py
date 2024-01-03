@@ -11,7 +11,7 @@ def Stanford_Relation_Extractor():
     os.chdir(origCwd + '/stanford-openie')
     for f in glob.glob(origCwd + "/data/output/kg/*.txt"):   
        
-        print("Extracting relations for " + f.split("/")[-1])  
+        print("Extracting relations for " + f)  
         p = subprocess.Popen(['./process_large_corpus.sh',f,f + '-out.csv'], stdout=subprocess.PIPE)
 
         output, err = p.communicate()
