@@ -276,7 +276,7 @@ def main():
         # Save named entities
         op_pickle_filename = ner_pickles_op + "named_entity_" + file.split('/')[-1].split('.')[0] + ".pickle"
         with open(op_pickle_filename,"wb") as f:
-            print("writing to " + op_pickle_filename + "\n")'
+            print("writing to " + op_pickle_filename + "\n")
             pickle.dump(named_entities, f)
 
         if(execute_coref_resol):
@@ -285,6 +285,6 @@ def main():
 
         op_filename = coref_resolved_op + file.split('/')[-1]
         with open(op_filename,"w+") as f:
-            print("writing to " + op_filename + "\n")'
+            print("writing to " + op_filename + "\n")
             f.write(doc)
 main()
