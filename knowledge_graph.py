@@ -227,9 +227,7 @@ def main():
     coref_cache_path = output_path + "caches/"
     coref_resolved_op = output_path + "kg/"
     
-    stanford_core_nlp_path = input("\n\nProvide (relative/absolute) path to stanford core nlp package.\n Press carriage return to use './stanford-corenlp-full-2018-10-05' as path:")
-    if(stanford_core_nlp_path == ''):
-        stanford_core_nlp_path = "./stanford-corenlp-full-2018-10-05"
+    stanford_core_nlp_path = "./stanford-corenlp-full-2018-10-05"
 
     file_list = []
     for f in glob.glob('./data/input/*'):
@@ -278,6 +276,7 @@ def main():
         # Save named entities
         op_pickle_filename = ner_pickles_op + "named_entity_" + file.split('/')[-1].split('.')[0] + ".pickle"
         with open(op_pickle_filename,"wb") as f:
+            print("writing to " + op_pickle_filename + "\n")'
             pickle.dump(named_entities, f)
 
         if(execute_coref_resol):
@@ -286,5 +285,6 @@ def main():
 
         op_filename = coref_resolved_op + file.split('/')[-1]
         with open(op_filename,"w+") as f:
+            print("writing to " + op_filename + "\n")'
             f.write(doc)
 main()
