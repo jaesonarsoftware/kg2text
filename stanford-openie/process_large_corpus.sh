@@ -26,7 +26,7 @@ var=1
 for file in ${TMP_DIR}/small_*
 do
     if [[ -f $file ]]; then
-        echo "(${var} / ${num_files}) python main.py -f $file > $file.out"
+        echo "(${var} / ${num_files}) python3 main.py -f $file > $file.out"
         python main.py -f $file > $file.out
         var=$((var + 1))
     fi
