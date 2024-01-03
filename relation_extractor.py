@@ -13,7 +13,7 @@ def Stanford_Relation_Extractor():
         current_directory = os.getcwd()
         os.chdir(current_directory + '/stanford-openie')
 
-        p = subprocess.Popen(['./stanford-openie/process_large_corpus.sh',f,f + '-out.csv'], stdout=subprocess.PIPE)
+        p = subprocess.Popen(['process_large_corpus.sh',f,f + '-out.csv'], stdout=subprocess.PIPE)
 
         output, err = p.communicate()
    
